@@ -26,7 +26,7 @@
       <input type="number" id="players" class="form-control" min="1" placeholder="Players" />
     </div>
   </div>
-  <div class="homebox border d-flex" style="height:70vh;">
+  <div class="homebox border d-flex" style="height:50vh;">
     <div class="camembert border col-8"> camembert</div>
     <div class="sidebar border col-4">sidebar</div>
   </div>
@@ -44,4 +44,3 @@
   </div>
 
 <%= link_to "log out", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-
