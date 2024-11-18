@@ -1,0 +1,13 @@
+.navbar {
+  justify-content: space-between;
+  background: white;
+  flex-grow: 0;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.border-outline {
+border-color: grey;
+border-bottom-width: var(--border-width-sm);
+}
