@@ -1,0 +1,48 @@
+.sidebar {
+  border-radius: 5px;
+  flex-direction: column;
+  overflow: hidden;
+  color: #caf0f8;
+}
+
+.reviewcard {
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  border : 1px solid, rgba(134, 122, 122, 0.098);
+  height: 72px;
+  font-size: small;
+  text-wrap: wrap;
+  overflow: hidden;
+  color: #03045e;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
+
+.reviewcard h3 {
+  margin-top: 1px;
+  font-weight: bold;
+  font-size: medium;
+  text-align: start;
+}
+
+.reviewcard img {
+  height: 64px;
+  width: auto;
+  object-fit: cover;
+}
+
+.reviewcard p {
+  margin-bottom: 0px;
+}
+
+.container {
+  --bs-gutter-x: 0rem;
+}
+
+#rating {
+  vertical-align: top;
+}
