@@ -11,11 +11,15 @@ class GamesController < ApplicationController
   def new
     @game = Game.new
   end
-
+  
   def create
     @game = Game.new(game_params)
-    @game.save!
-    redirect_to games_path(@game)
+    @game.user = current_user
+    if @game.save
+      redirect_to games_path(@game)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -24,8 +28,11 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
-    @game.update(game_params)
-    redirect_to game_path(@game)
+    if @game.update(game_params)
+      redirect_to game_path(@game)
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def destroy
@@ -37,7 +44,7 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:name, :picture, :description, :location, :price, :number_of_players, :category, :user_id)
+    params.require(:game).permit(:name, :picture, :description, :location, :price, :number_of_players, :category, :user_id, photos: [])
   end
 
 end
