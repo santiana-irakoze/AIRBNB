@@ -1,10 +1,11 @@
-<%= simple_form_for(@game) do |f| %>
+<%= simple_form_for @game do |f| %>
   <%= f.input :name %>
-  <%= f.input :picture %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true} %>
   <%= f.input :description %>
   <%= f.input :location %>
   <%= f.input :price %>
-  <%= f.input :number_of_players %>
+  <%= f.input :min_number_of_players %>
+  <%= f.input :max_number_of_players %>
   <%= f.input :category %>
   <%= f.submit %>
 <% end %>
