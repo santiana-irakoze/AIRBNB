@@ -1,0 +1,8 @@
+#bright:active {
+  background-color: yellow;
+  border-color: yellow;
+  color: black;
+}
+#bright {
+  transition: background-color 0.1s, border-color 0.1s, color 0.1s;
+}
