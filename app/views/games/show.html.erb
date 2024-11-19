@@ -9,7 +9,6 @@
               <%= cl_image_tag photo.key, height: 400, width: 400, crop: :fill, class: "img-fluid" %>
             <% end %>
           </div>
-
           <div class="details">
             <h1 class="card-title text-primary font-weight-bold mb-3"><%= @game.name.capitalize %></h1>
             <p><strong>Description:</strong> <%= @game.description %></p>
