@@ -11,7 +11,7 @@ class GamesController < ApplicationController
   def new
     @game = Game.new
   end
-  
+
   def create
     @game = Game.new(game_params)
     @game.user = current_user
@@ -48,4 +48,3 @@ class GamesController < ApplicationController
   end
 
 end
-

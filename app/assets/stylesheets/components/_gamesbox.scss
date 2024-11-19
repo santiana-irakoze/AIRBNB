@@ -1,12 +1,14 @@
-.gamesbox {
-  display: flex;
-  scroll-behavior: smooth;
-  animation: scroll-left 15s linear;
-  width: 100%;
-  max-width: 100vw;
-  list-style-type: none;
-  height: 20vh;
-}
+// .gamesbox {
+//   display: flex;
+//   scroll-behavior: smooth;
+//   animation: scroll-left 15s linear;
+//   width: 100%;
+//   max-width: 100vw;
+//   list-style-type: none;
+//   height: 20vh;
+//   align-items: center;
+//   padding: 10px 5px 10px 5px;
+// }
 
   /* Smooth scrolling animation */
 @keyframes scroll-left {
@@ -20,5 +22,80 @@
   object-fit: cover;
   height: 15vh;
   width: 15vh;
-  object-fit: cover;
+}
+
+@media (hover: hover) {
+  .gamesbox {
+      --grid-gap: 32px;
+      padding-inline: 0;
+      overflow-x: hidden;
+  }
+}
+.gamesbox {
+  --item-speed: 4s;
+  --grid-gap: 24px;
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  padding-top: 60px;
+  padding-inline: 24px;
+  overflow: hidden;
+  overflow-x: scroll;
+}
+
+@media (hover: hover) {
+  .gamesbox__track {
+      -webkit-animation: linear infinite;
+      animation: linear infinite;
+      -webkit-animation-duration: calc(var(--item-speed)* var(--item-count, 8));
+      animation-duration: calc(var(--item-speed)* var(--item-count, 8));
+  }
+}
+.gamesbox__track {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  animation: 1.8s alternate-reverse infinite ease-in-out;
+}
+
+.gamesbox__grid {
+  display: grid;
+  grid-auto-columns: -webkit-min-content;
+  grid-auto-columns: min-content;
+  grid-auto-flow: column;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-transform: translateX(var(--grid-x-offset, 0));
+  -ms-transform: translateX(var(--grid-x-offset, 0));
+  transform: translateX(var(--grid-x-offset, 0));
+  -webkit-transition: -webkit-transform 0.6s ease-out;
+  transition: -webkit-transform 0.6s ease-out;
+  transition: transform 0.6s ease-out;
+  transition: transform 0.6s ease-out, -webkit-transform 0.6s ease-out;
+  gap: var(--grid-gap);
+}
+
+// element.style {
+//   --stack-color-1: #E6FDC9;
+//   --stack-color-2: #EDF3D8;
+// }
+// .site-footer a, .site-footer a:visited, .site-footer a:active {
+//   color: inherit;
+//   text-decoration: none;
+// }
+// a:link, a:visited {
+//   -webkit-transition: var(--link-transition, color 200ms ease);
+//   transition: var(--link-transition, color 200ms ease);
+//   color: var(--link-color, #0d0c22);
+//   -webkit-text-decoration: var(--link-decoration, none);
+//   text-decoration: var(--link-decoration, none);
+// }
+.gamesbox-item {
+  --item-media-width: 200px;
+  --item-media-height: 150px;
+  position: relative;
+  -webkit-transform: perspective(300px) translate3d(0, 0, 0);
+  transform: perspective(300px) translate3d(0, 0, 0);
+  color: #fff;
 }

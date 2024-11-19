@@ -1,11 +1,19 @@
+<div class="grid">
+  <div class="col">
+    <div class="row">
+      <div class="cardgame">
+        <div class="cardtitle">
+          <h2><%= @game.name %></h2>
+        <img src="<%= game.photo.key %>" alt="<%= game.name %>" width=auto>
+        </div>
+        <p><%= game.description %></p>
+      </div>
+      <%= render 'bookmarknew', bookmark: @bookmark, list: @list %>
+    </div>
+  </div>
+</div>
 
 
-
-
-
-
-<%# Pour plus tard %>
-
-<% @games.photos.each do |photo| %>
- <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
+<%# <% @games.photos.each do |photo| %>
+ <%# <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<%# <% end %>
