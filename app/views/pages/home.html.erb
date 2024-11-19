@@ -72,11 +72,13 @@
       <div class="gamesbox__track">
         <div class="gamesbox__grid">
           <% @games.each do |game| %>
-        <%# <% if photo.key.present? %>
-        <%# <%= cl_image_tag game.photo.key, height: 300, width: 400, crop: :fill %>
-        <%# <% else %>
-            <%= link_to "games#show" do %>
-              <div style="height: 20vh; width: 20vh; color: white;" class="gamesbox__item"><%= game.name %></div>
+            <%= link_to game_path(game), :action => 'go' do %>
+              <div style="height: 20vh; width: 20vh; color: white;" class="gamesbox__item">
+                <% game.photos.each do |photo| %>
+                  <%= cl_image_tag photo.key, height: 400, width: 400, crop: :fill, class: "img-fluid" %>
+                <% end %>
+              </div>
+              <p><%= game.name %></p>
             <% end %>
           <% end %>
         </div>
@@ -85,14 +87,4 @@
       <div class ="gamesbox">
     </div>
   </div>
-
-
-<%# <li><img src="https://cdn.cultura.com/cdn-cgi/image/width=1280/media/pim/42_245081_1_10_FR.jpg" alt="Code Names" style="height:20vh;" class="cardgame"></li> %>
-<%# <li><img src="https://m.media-amazon.com/images/I/81Pfuow1T8L._AC_SL1500_.jpg" alt="skyjo" style="height:20vh;" class="cardgame"></li> %>
-<%# <li><img src="https://static.fnac-static.com/multimedia/Images/FR/MDM/0a/97/50/22058762/3756-1/tsp20241029151658/Jeu-d-enquete-Hasbro-Gaming-Cluedo-Conspiration.jpg" alt="cluedo" style="height:20vh;" class="cardgame"></li> %>
-<%# <li><img src="https://www.natureetdecouvertes.com/fstrz/r/s/cache.natureetdecouvertes.com/Medias/Images/Articles/30159820/30159820-bascule-d-archim-de_P1.jpg?width=610&height=610&frz-v=748" alt="Bascule d'Archimède" style="height:20vh;" class="cardgame"></li> %>
-<%# <li><img src="https://m.media-amazon.com/images/I/81ho3NWCOZL._AC_SL1500_.jpg" alt="Disparu aux Caraïbes" style="height:20vh;" class="cardgame"></li> %>
-<%# <li><img src="https://m.media-amazon.com/images/I/910JmtbDKSL._SL1500_.jpg" alt="Les enfants de la résistance" style="height:20vh;" class="cardgame"></li> %>
-<%# <li><img src="https://contents.mediadecathlon.com/p2034549/k$a5c9dd448e5fb9dd94941150026e504d/sq/set-roundnet-schildkrot.jpg?format=auto&f=2400x2400" alt="schildkröt" style="height:20vh;" class="cardgame"></li> %>
-<%# <li><img src="https://m.media-amazon.com/images/I/81dScplCyoL._AC_SL1500_.jpg" alt="Tarot" style="height:20vh;" class="cardgame"></li> %>
 </div>
