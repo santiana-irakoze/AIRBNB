@@ -30,18 +30,28 @@
         </a>
         <ul class="dropdown-menu dropdown-menu-end shadow-sm">
           <li><a class="dropdown-item" href="#">Find game</a></li>
-          <li><a class="dropdown-item" href="#">Create new game</a></li>
+          <li>
+            <%= link_to new_game_path, style: "text-decoration:none;", :action => 'go' do %>
+            <p class="dropdown-item">Create a game</p>
+            <% end %>
+          </li>
           <li><a class="dropdown-item" href="#">Book game</a></li>
           <li><a class="dropdown-item" href="#">See all games</a></li>
         </ul>
       </div>
       <!-- Sign-up and Log-in Buttons -->
       <button class="btn btn-light me-2">
+      <% if current_user %>
+        <button class="btn btn-light">
+          <%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </button>
+        <% else %>
         <%= link_to "Sign Up", new_user_registration_path %>
       </button>
       <button class="btn btn-light">
         <%= link_to "Log In", new_user_session_path %>
       </button>
+      <% end %>
     </div>
   </div>
 </nav>
