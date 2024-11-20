@@ -11,12 +11,13 @@
         type="text"
         name="search[query]"
         id="search_query"
-        placeholder="Search your game!"
-      />
-      <label for="start_date" class="me-2 fw-bold">Start:</label>
-      <input type="date" id="start_date" class="form-control border-0 me-3">
-      <label for="end_date" class="me-2 fw-bold">End:</label>
-      <input type="date" id="end_date" class="form-control border-0">
+        placeholder="Search your game!"/>
+    </div>
+
+    <div>
+      <%= link_to new_game_path, style: "text-decoration:none;", :action => 'go' do %>
+        <p id="add-game">Add a new game</p>
+      <% end %>
     </div>
 
     <!-- Menu and Buttons -->
@@ -38,12 +39,12 @@
         </ul>
       </div>
       <!-- Sign-up and Log-in Buttons -->
-      <button class="btn btn-light me-2">
       <% if current_user %>
         <button class="btn btn-light">
           <%= link_to "Log Out", destroy_user_session_path, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
         </button>
         <% else %>
+        <button class="btn btn-light me-2">
         <%= link_to "Sign Up", new_user_registration_path %>
       </button>
       <button class="btn btn-light">
