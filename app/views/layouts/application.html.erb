@@ -11,28 +11,10 @@
   </head>
 
   <body>
-
-  <nav class="navbar border-bottom border-body border-outline">
-  <div class="container-fluid">
-    <img src="https://www.creativefabrica.com/wp-content/uploads/2022/11/16/Bridge-card-game-logo-design-Graphics-46923745-1-580x377.jpg" alt="logo" style="height: 7vh;">
-      <a class="nav-link active" aria-current="page" href="#"><%= link_to "New", new_game_path %></a>
-      <a class="nav-link" href="#">Find</a>
-      <a class="nav-link" href="#">Nearby</a>
-      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
-        <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="sign up"><%= link_to "sign up", new_user_registration_path %></button>
-      <button type="button" class="btn btn-info" data-toggle="tooltip" data-placement="right" title="log in"><%= link_to "log in", new_user_session_path %></button>
-    </div>
-  </div>
-</nav>
-  </div>
+    <%= render 'shared/navbar' %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <div class="main-background"></div>
     <%= yield %>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-
   </body>
 </html>

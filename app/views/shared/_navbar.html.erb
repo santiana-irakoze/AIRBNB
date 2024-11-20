@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid d-flex align-items-center">
+
+    <a class="navbar-brand" href="#">
+      <img src=""
+           alt="logo" class="logo">
+    </a>
+
+
+    <div class="searchbar rounded bg-light d-flex align-items-center px-3 me-auto">
+      <input
+        class="form-control border-0 me-3"
+        type="text"
+        name="search[query]"
+        id="search_query"
+        placeholder="Search your game!"
+      />
+      <label for="start_date" class="me-2 fw-bold">Start:</label>
+      <input type="date" id="start_date" class="form-control border-0 me-3">
+      <label for="end_date" class="me-2 fw-bold">End:</label>
+      <input type="date" id="end_date" class="form-control border-0">
+    </div>
+
+    <!-- Menu and Buttons -->
+    <div class="d-flex align-items-center">
+      <!-- Dropdown Menu -->
+      <div class="dropdown me-3">
+        <a class="nav-link dropdown-toggle text-light fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Menu
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+          <li><a class="dropdown-item" href="#">Find game</a></li>
+          <li><a class="dropdown-item" href="#">Create new game</a></li>
+          <li><a class="dropdown-item" href="#">Book game</a></li>
+          <li><a class="dropdown-item" href="#">See all games</a></li>
+        </ul>
+      </div>
+      <!-- Sign-up and Log-in Buttons -->
+      <button class="btn btn-light me-2">
+        <%= link_to "Sign Up", new_user_registration_path %>
+      </button>
+      <button class="btn btn-light">
+        <%= link_to "Log In", new_user_session_path %>
+      </button>
+    </div>
+  </div>
+</nav>
