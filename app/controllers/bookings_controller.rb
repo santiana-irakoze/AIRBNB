@@ -10,6 +10,19 @@ class BookingsController < ApplicationController
     @game = Game.find(params[:game_id])
     @booking.game = @game
     @booking.user = current_user
+
+
+#     if @booking
+
+# maybe_start_date = @booking.start_date
+# maybe_end_date = @booking.end_date
+# range = (maybe_start_date..maybe_end_date)
+# range.include?(Date.new(2012, 10, 5))
+# range.include?(Date.new(2012, 11, 1))
+
+# if range
+
+
     if @booking.save
       redirect_to game_booking_path(@game, @booking)
     else
