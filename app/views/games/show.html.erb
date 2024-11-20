@@ -18,7 +18,10 @@
             <p><strong>Creator:</strong> User ID <%= @game.user_id %></p>
             <p><strong>Number of players:</strong> <%= @game.min_number_of_players %> - <%= @game.max_number_of_players %></p>
             <p><strong>Playing Time:</strong> <%= @game.playing_time %> mins</p>
-            <%= link_to 'All games', games_path, class: 'btn btn-secondary btn-sm mt-3' %>
+            <%= link_to 'All games', root_path, class: 'btn btn-secondary btn-sm mt-3' %>
+            <%= link_to 'Edit this game', edit_game_path, class: 'btn btn-secondary btn-sm mt-3' %>
+            <%= link_to 'Book this game', new_booking_path, class: 'btn btn-secondary btn-sm mt-3' %>
+            <%= link_to 'Delete this game', game_path(@game), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: 'btn btn-secondary btn-sm mt-3' %>            
           </div>
         </div>
       </div>
