@@ -12,14 +12,32 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
 
-#     if @booking
 
-# maybe_start_date = @booking.start_date
-# maybe_end_date = @booking.end_date
-# range = (maybe_start_date..maybe_end_date)
+# start_date ne doit pas être antérieure à aujourd'hui
+# end_date ne doit pas être antérieure à start_date
+# Date ne doit pas déjà être réservée
+
+# quand réservé, marqué tous les jours de la range comme "réservée"
+# quand demande de réservation, faire un each sur tous les jours de la range pour comparer avec le statut réservé ou non
+# si OK, proceed, si non, message d'erreur
+
+# ne pas oublier de require le module date 
+
+
+
+# booking_start_date = @booking.start_date
+# booking_end_date = @booking.end_date
+# range = (booking_start_date..booking_end_date)
+
+
+
+# range. each do |day|
+  
+# end
+
+
 # range.include?(Date.new(2012, 10, 5))
 # range.include?(Date.new(2012, 11, 1))
-
 # if range
 
 
