@@ -25,9 +25,23 @@
             <% else %>
             <%= link_to 'Book this game', new_game_booking_path(@game), class: 'btn btn-secondary btn-sm mt-3' %>
             <% end %>
-            <%= link_to 'Add a review', new_game_booking_path(@game), class: 'btn btn-secondary btn-sm mt-3' %>
-            <h3 class="h4 mb-3">Write a Review</h3>
-            <%= render 'reviews/form' %>
+            
+            <button type="button" class="btn btn-secondary btn-sm mt-3" data-bs-toggle="modal" data-bs-target="#reviewModal">Add a review</button>
+
+            <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="reviewModalLabel">Tell us everything!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <%= render 'reviews/form' %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
