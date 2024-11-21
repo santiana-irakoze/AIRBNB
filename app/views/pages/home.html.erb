@@ -1,64 +1,61 @@
-
-<div class="container mt-6">
-  <div class="homebox d-flex" style="height:50vh;">
-    <div class="camembert col-9"> camembert</div>
-    <div class="sidebar col-3"><h3><strong>Il y en a qui ont essayé...</strong></h3>
+<div class="container mt-6 d-flex"  style="height:50vh;">
+  <div class="sidebar col-10 scroll-y">
+  </div>
+  <div class="sidebar col-2 scroll-y"><h3><strong>Il y en a qui ont essayé...</strong></h3>
+    <div class="reviewcard">
+      <div><img src="https://m.media-amazon.com/images/I/81ho3NWCOZL._AC_SL1500_.jpg" alt="Disparu aux Caraïbes"></div>
+      <div><h3>On a adoré !</h3>
+      <p>ce jeu est vraiment super, on a passé un bon moment</p></div>
+      <div id="rating"><p>4/5</p></div>
+    </div>
       <div class="reviewcard">
-        <div><img src="https://m.media-amazon.com/images/I/81ho3NWCOZL._AC_SL1500_.jpg" alt="Disparu aux Caraïbes"></div>
-        <div><h3>On a adoré !</h3>
-        <p>ce jeu est vraiment super, on a passé un bon moment</p></div>
-        <div id="rating"><p>4/5</p></div>
-      </div>
-       <div class="reviewcard">
-        <div><img src="https://m.media-amazon.com/images/I/81ho3NWCOZL._AC_SL1500_.jpg" alt="Disparu aux Caraïbes"></div>
-        <div><h3>On a adoré !</h3>
-        <p>ce jeu est vraiment super, on a passé un bon moment</p></div>
-        <div id="rating"><p>4/5</p></div>
-      </div>
-       <div class="reviewcard">
-        <div><img src="https://m.media-amazon.com/images/I/81ho3NWCOZL._AC_SL1500_.jpg" alt="Disparu aux Caraïbes"></div>
-        <div><h3>On a adoré !</h3>
-        <p>ce jeu est vraiment super, on a passé un bon moment</p></div>
-        <div id="rating"><p>4/5</p></div>
-      </div>
-       <div class="reviewcard">
-        <div><img src="https://m.media-amazon.com/images/I/81ho3NWCOZL._AC_SL1500_.jpg" alt="Disparu aux Caraïbes"></div>
-        <div><h3>On a adoré !</h3>
-        <p>ce jeu est vraiment super, on a passé un bon moment</p></div>
-        <div id="rating"><p>4/5</p></div>
-      </div>
-       <div class="reviewcard">
-        <div><img src="https://m.media-amazon.com/images/I/81ho3NWCOZL._AC_SL1500_.jpg" alt="Disparu aux Caraïbes"></div>
-        <div><h3>On a adoré !</h3>
-        <p>ce jeu est vraiment super, on a passé un bon moment</p></div>
-        <div id="rating"><p>4/5</p></div>
-      </div>
-       <div class="reviewcard">
-        <div><img src="https://m.media-amazon.com/images/I/81ho3NWCOZL._AC_SL1500_.jpg" alt="Disparu aux Caraïbes"></div>
-        <div><h3>On a adoré !</h3>
-        <p>ce jeu est vraiment super, on a passé un bon moment</p></div>
-        <div id="rating"><p>4/5</p></div>
-      </div>
+      <div><img src="https://m.media-amazon.com/images/I/81ho3NWCOZL._AC_SL1500_.jpg" alt="Disparu aux Caraïbes"></div>
+      <div><h3>On a adoré !</h3>
+      <p>ce jeu est vraiment super, on a passé un bon moment</p></div>
+      <div id="rating"><p>4/5</p></div>
+    </div>
+      <div class="reviewcard">
+      <div><img src="https://m.media-amazon.com/images/I/81ho3NWCOZL._AC_SL1500_.jpg" alt="Disparu aux Caraïbes"></div>
+      <div><h3>On a adoré !</h3>
+      <p>ce jeu est vraiment super, on a passé un bon moment</p></div>
+      <div id="rating"><p>4/5</p></div>
+    </div>
+      <div class="reviewcard">
+      <div><img src="https://m.media-amazon.com/images/I/81ho3NWCOZL._AC_SL1500_.jpg" alt="Disparu aux Caraïbes"></div>
+      <div><h3>On a adoré !</h3>
+      <p>ce jeu est vraiment super, on a passé un bon moment</p></div>
+      <div id="rating"><p>4/5</p></div>
+    </div>
+      <div class="reviewcard">
+      <div><img src="https://m.media-amazon.com/images/I/81ho3NWCOZL._AC_SL1500_.jpg" alt="Disparu aux Caraïbes"></div>
+      <div><h3>On a adoré !</h3>
+      <p>ce jeu est vraiment super, on a passé un bon moment</p></div>
+      <div id="rating"><p>4/5</p></div>
+    </div>
+      <div class="reviewcard">
+      <div><img src="https://m.media-amazon.com/images/I/81ho3NWCOZL._AC_SL1500_.jpg" alt="Disparu aux Caraïbes"></div>
+      <div><h3>On a adoré !</h3>
+      <p>ce jeu est vraiment super, on a passé un bon moment</p></div>
+      <div id="rating"><p>4/5</p></div>
     </div>
   </div>
-  <div>
-    <div class="gamesbox">
-      <div class="gamesbox__track">
-        <div class="gamesbox__grid">
-          <% @games.each do |game| %>
-            <%= link_to game_path(game), class: "text-decoration-none", :action => 'go' do %>
-              <div style="height: 20vh; width: 20vh; color: white;" class="gamesbox__item">
-                <% game.photos.each do |photo| %>
-                  <%= cl_image_tag photo.key, height: 400, width: 400, crop: :fill, class: "img-fluid" %>
-                <% end %>
-              </div>
-              <p style="color: white; font-weight: bold;"><%= game.name %></p>
+</div>
+<div class="gamesbox">
+  <div class="gamesbox__track">
+    <div class="gamesbox__grid">
+      <% @games.each do |game| %>
+        <%= link_to game_path(game), class: "text-decoration-none", :action => 'go' do %>
+          <div style="height: 20vh; width: 20vh; color: white;" class="gamesbox__item">
+            <% game.photos.each do |photo| %>
+              <%= cl_image_tag photo.key, height: 400, width: 400, crop: :fill, class: "img-fluid" %>
             <% end %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-      <div class ="gamesbox">
+          </div>
+          <p style="color: white; font-weight: bold;"><%= game.name %></p>
+        <% end %>
+      <% end %>
     </div>
   </div>
+</div>
+  <div class ="gamesbox">
+</div>
 </div>

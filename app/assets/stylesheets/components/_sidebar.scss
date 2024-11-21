@@ -1,8 +1,15 @@
 .sidebar {
   border-radius: 5px;
   flex-direction: column;
-  overflow: hidden;
   color: #caf0f8;
+
+  &.scroll-y {
+    overflow-y: scroll;
+  }
+
+  &::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+  }
 }
 
 .reviewcard {

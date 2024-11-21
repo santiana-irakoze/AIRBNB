@@ -1,0 +1,23 @@
+    <h3><strong>Here are some games matching your search:</strong></h3>
+    <div id="searchresults">
+      <% if @search.any? %>
+        <% @search.each do |result| %>
+          <div class="d-inline-flex p-2 overflow-auto"style="width: 27%; height: auto">
+            <div class="results">
+              <div class="photo-card">
+                <% result.photos.each do |photo| %>
+                  <%= link_to game_path(result), class: "text-decoration-none", :action => 'go' do %>
+                    <%= cl_image_tag photo.key, height: 150, width: 150, crop: :fill, class: "img-fluid" %>
+                  <% end %>
+                <% end %>
+              </div>
+              <div class="card-body">
+                <p class="card-title"><%= result.name%></p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <em>Sorry, no games found.</em>
+      <% end %>
+    </div>
