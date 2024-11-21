@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
 # quand demande de réservation, faire un each sur tous les jours de la range pour comparer avec le statut réservé ou non
 # si OK, proceed, si non, message d'erreur
 
-# ne pas oublier de require le module date 
+# ne pas oublier de require le module date
 
 
 
@@ -32,7 +32,7 @@ class BookingsController < ApplicationController
 
 
 # range. each do |day|
-  
+
 # end
 
 
@@ -51,6 +51,7 @@ class BookingsController < ApplicationController
   def show
     @game = Game.find(params[:game_id])
   end
+
   def edit
     @booking = Booking.find(params[:id])
   end
