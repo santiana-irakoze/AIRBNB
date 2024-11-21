@@ -45,7 +45,9 @@ class GamesController < ApplicationController
   private
 
   def game_params
-    params.require(:game).permit(:name, :description, :location, :price, :category, :user_id, :min_number_of_players, :max_number_of_players, :playing_time, :photo)
+    values = params.require(:game).permit(:name, :description, :location, :price, :category, :user_id, :min_number_of_players, :max_number_of_players, :playing_time, photo: [])
+    values.delete(:photo) if values[:photo].blank?
+    return values
   end
 
 end

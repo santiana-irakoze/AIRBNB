@@ -1,47 +1,27 @@
+<%# <div class="camembert col-9"> camembert</div> %>
+<div class="homebox position-relative" style="height: 47vh;">
+  <!-- Overlay Image -->
+  <div class="overlay-image position-absolute" style="top: 60%; left: 86%; transform: translate(-50%, -50%);">
+    <img src="https://res.cloudinary.com/dc3qzjv1h/image/upload/v1732202814/review_circle-removebg-preview_shc03e.png" alt="Overlay" style="max-width: 350px; max-height: 350px; display: block; margin: auto;">
 
-<div class="container mt-6">
-  <div class="homebox d-flex" style="height:50vh;">
-    <div class="camembert col-9"> camembert</div>
-    <div class="sidebar col-3"><h3><strong>Il y en a qui ont essayé...</strong></h3>
-      <div class="reviewcard">
-        <div><img src="https://m.media-amazon.com/images/I/81ho3NWCOZL._AC_SL1500_.jpg" alt="Disparu aux Caraïbes"></div>
-        <div><h3>On a adoré !</h3>
-        <p>ce jeu est vraiment super, on a passé un bon moment</p></div>
-        <div id="rating"><p>4/5</p></div>
-      </div>
-       <div class="reviewcard">
-        <div><img src="https://m.media-amazon.com/images/I/81ho3NWCOZL._AC_SL1500_.jpg" alt="Disparu aux Caraïbes"></div>
-        <div><h3>On a adoré !</h3>
-        <p>ce jeu est vraiment super, on a passé un bon moment</p></div>
-        <div id="rating"><p>4/5</p></div>
-      </div>
-       <div class="reviewcard">
-        <div><img src="https://m.media-amazon.com/images/I/81ho3NWCOZL._AC_SL1500_.jpg" alt="Disparu aux Caraïbes"></div>
-        <div><h3>On a adoré !</h3>
-        <p>ce jeu est vraiment super, on a passé un bon moment</p></div>
-        <div id="rating"><p>4/5</p></div>
-      </div>
-       <div class="reviewcard">
-        <div><img src="https://m.media-amazon.com/images/I/81ho3NWCOZL._AC_SL1500_.jpg" alt="Disparu aux Caraïbes"></div>
-        <div><h3>On a adoré !</h3>
-        <p>ce jeu est vraiment super, on a passé un bon moment</p></div>
-        <div id="rating"><p>4/5</p></div>
-      </div>
-       <div class="reviewcard">
-        <div><img src="https://m.media-amazon.com/images/I/81ho3NWCOZL._AC_SL1500_.jpg" alt="Disparu aux Caraïbes"></div>
-        <div><h3>On a adoré !</h3>
-        <p>ce jeu est vraiment super, on a passé un bon moment</p></div>
-        <div id="rating"><p>4/5</p></div>
-      </div>
-       <div class="reviewcard">
-        <div><img src="https://m.media-amazon.com/images/I/81ho3NWCOZL._AC_SL1500_.jpg" alt="Disparu aux Caraïbes"></div>
-        <div><h3>On a adoré !</h3>
-        <p>ce jeu est vraiment super, on a passé un bon moment</p></div>
-        <div id="rating"><p>4/5</p></div>
-      </div>
+    <!-- Text Centered on Image -->
+    <div class="text-center position-absolute" style="top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);">
+      <% if @reviews.present? %>
+        <% @reviews.each_with_index do |review, index| %>
+          <div class="review-slide <%= 'active' if index == 0 %>" style="animation-delay: <%= index * 5 %>s;">
+            <h4 class="mb-3"><%= review.title %></h4>
+            <p class="mb-2"><%= truncate(review.content, length: 150) %></p>
+            <span class="badge bg-primary"><%= review.rating %>/5</span>
+          </div>
+        <% end %>
+      <% else %>
+        <p>Aucune review disponible pour le moment.</p>
+      <% end %>
     </div>
   </div>
-  <div>
+</div>
+
+
     <div class="gamesbox">
       <div class="gamesbox__track">
         <div class="gamesbox__grid">
