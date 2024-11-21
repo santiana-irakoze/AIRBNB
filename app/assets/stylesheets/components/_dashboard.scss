@@ -1,0 +1,81 @@
+.card-product {
+  overflow: hidden;
+  height: 180px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  margin-top: 15px;
+  border-radius: 5px;
+  width: 80vw;
+}
+
+.card-product img {
+  height: 174px;
+  width: 100%;
+  object-fit: cover;
+  margin: 3px;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.bookingtable {
+  width: 60vw;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.bookingheader {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin-top: 15px;
+  display: flex;
+  overflow: hidden;
+}
+
+.bookingheadercells {
+  border: 0.5px solid white;
+  padding-inline: 10px;
+  background-color: $red;
+  min-width: 12vw;
+  flex-grow: 1;
+  text-align: center;
+  color: $white;
+}
+
+.bookinglines {
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  margin-top: 3px;
+  display: flex;
+}
+.bookinglinescells {
+  border-right: 0.5px dotted $redgame;
+  border-bottom: 0.5px dotted $redgame;
+  padding-inline: 10px;
+  background-color: transparent;
+  min-width: 12vw;
+  flex-grow: 1;
+  text-align: center;
+  color: $redgame;
+  font-weight:500;
+  padding: 4px 0px 4px 0px;
+  border-radius: 2px;
+}
+
+#lastcell {
+  border-right: none;
+}

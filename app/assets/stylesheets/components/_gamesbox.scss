@@ -25,13 +25,12 @@
 
 .gamesbox__track {
   width: fit-content;
-  animation: 60s linear 0s infinite running défilement;
+  animation: 30s linear 0s infinite running défilement;
   transform: unset;
 }
 
 .gamesbox__track:hover {
   animation-play-state: paused;
-  animation: 15s linear infinite défilement;
 }
 
 .gamesbox__grid {
