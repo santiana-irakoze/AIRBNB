@@ -1,6 +1,6 @@
 @keyframes défilement {
   0% {
-    transform: translateX(95vw);
+    transform: translateX(90vw);
   }
   100% {
     transform: translateX(-140vw);
@@ -25,13 +25,12 @@
 
 .gamesbox__track {
   width: fit-content;
-  animation: 60s linear 0s infinite running défilement;
+  animation: 30s linear 0s infinite running défilement;
   transform: unset;
 }
 
 .gamesbox__track:hover {
   animation-play-state: paused;
-  animation: 15s linear infinite défilement;
 }
 
 .gamesbox__grid {
@@ -45,7 +44,6 @@
   transition: transform 0.6s ease-out;
   gap: var(--grid-gap);
 }
-
 
 .gamesbox-item {
   --item-media-width: 200px;
