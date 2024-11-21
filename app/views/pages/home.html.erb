@@ -46,13 +46,13 @@
       <div class="gamesbox__track">
         <div class="gamesbox__grid">
           <% @games.each do |game| %>
-            <%= link_to game_path(game), :action => 'go' do %>
+            <%= link_to game_path(game), class: "text-decoration-none", :action => 'go' do %>
               <div style="height: 20vh; width: 20vh; color: white;" class="gamesbox__item">
                 <% game.photos.each do |photo| %>
                   <%= cl_image_tag photo.key, height: 400, width: 400, crop: :fill, class: "img-fluid" %>
                 <% end %>
               </div>
-              <p><%= game.name %></p>
+              <p style="color: white; font-weight: bold;"><%= game.name %></p>
             <% end %>
           <% end %>
         </div>
