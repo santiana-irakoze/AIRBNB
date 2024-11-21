@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @review.game = @game
     if @review.save
-      redirect_to restaurant_path(@restaurant)
+      redirect_to game_path(@game)
     else
       render :new, status: :unprocessable_entity
     end
