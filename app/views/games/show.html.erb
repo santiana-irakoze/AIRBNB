@@ -25,6 +25,7 @@
             <% else %>
             <%= link_to 'Book this game', new_game_booking_path(@game), class: 'btn btn-secondary btn-sm mt-3' %>
             <% end %>
+            
             <button type="button" class="btn btn-secondary btn-sm mt-3" data-bs-toggle="modal" data-bs-target="#reviewModal">Add a review</button>
 
             <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
