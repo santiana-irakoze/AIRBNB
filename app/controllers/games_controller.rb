@@ -6,6 +6,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @review = @game.reviews.build
   end
 
   def new

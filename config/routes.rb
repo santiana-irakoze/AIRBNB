@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   resources :games do
     resources :bookings
+    resources :reviews
   end
 
   get 'dashboard', to: 'users#dashboard', as: :dashboard

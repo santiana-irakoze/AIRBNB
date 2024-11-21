@@ -1,6 +1,6 @@
 @keyframes défilement {
   0% {
-    transform: translateX(95vw);
+    transform: translateX(90vw);
   }
   100% {
     transform: translateX(-140vw);
@@ -44,7 +44,6 @@
   transition: transform 0.6s ease-out;
   gap: var(--grid-gap);
 }
-
 
 .gamesbox-item {
   --item-media-width: 200px;

@@ -44,7 +44,7 @@
   <div>
     <div class="gamesbox">
       <div class="gamesbox__track">
-        <div class="gamesbox__grid">
+        <div class="gamesbox__grid" data-controller="pages">
           <% @games.each do |game| %>
             <%= link_to game_path(game), class: "text-decoration-none", :action => 'go' do %>
               <div style="height: 20vh; width: 20vh; color: white;" class="gamesbox__item">

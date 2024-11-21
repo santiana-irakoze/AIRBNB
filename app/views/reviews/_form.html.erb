@@ -1,0 +1,26 @@
+<%= form_with(model: [@game, @review], local: true) do |form| %>
+  <div class="mb-3">
+    <%= form.label :title, class: 'form-label' %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :content, class: 'form-label' %>
+    <%= form.text_area :content, class: 'form-control' %>
+  </div>
+  <div class="mb-3">
+    <label for="review_rating" class="form-label">Rating</label>
+    <div id="star" class="d-flex">
+      <div class="stars">
+        <i class="fa fa-star gold"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+      </div>
+    </div>
+    <%= form.hidden_field :rating, id: 'rating_input' %>
+  </div>
+  <div>
+    <%= form.submit 'Submit Review', class: 'btn btn-primary' %>
+  </div>
+<% end %>
