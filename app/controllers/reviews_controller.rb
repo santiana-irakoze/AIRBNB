@@ -13,9 +13,16 @@ class ReviewsController < ApplicationController
       render 'games/show', status: :unprocessable_entity
     end
   end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+    redirect_to game_path(@review.game)
+  end
+
   private
 
   def review_params
-    params.require(:review).permit(:rating, :title, :content)
+    params.require(:review).permit(:rating, :title, :content, :game_id)
   end
 end
