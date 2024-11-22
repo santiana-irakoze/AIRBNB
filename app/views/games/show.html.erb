@@ -20,11 +20,13 @@
             <p><strong>Playing Time:</strong> <%= @game.playing_time %> mins</p>
             <%= link_to 'All games', root_path, class: 'btn btn-secondary btn-sm mt-3' %>
             <% if @game.user == current_user %>
-            <%= link_to 'Edit this game', edit_game_path, class: 'btn btn-secondary btn-sm mt-3' %>
+            <%= link_to 'Edit this game', edit_game_path(@game), class: 'btn btn-secondary btn-sm mt-3' %>
             <%= link_to 'Delete this game', game_path(@game), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: 'btn btn-secondary btn-sm mt-3' %>
             <% else %>
             <%= link_to 'Book this game', new_game_booking_path(@game), class: 'btn btn-secondary btn-sm mt-3' %>
             <% end %>
+
+            <button type="button" class="btn btn-secondary btn-sm mt-3" data-bs-toggle="modal" data-bs-target="#reviewModal">Add a review</button>
 
             <button type="button" class="btn btn-secondary btn-sm mt-3" data-bs-toggle="modal" data-bs-target="#reviewModal">Add a review</button>
             
@@ -41,10 +43,32 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="container d-flex justify-content-center">
+
+  <div class="review-container" style="background: rgba(255, 255, 255, 0.8); color: black; padding: 10px; border-radius: 8px; margin-bottom: 15px; ; width: 60%">
+    <% if @game.reviews.empty? %>
+      <small><em class="text-muted">Be the first one to review this game !</em></small>
+    <% else %>
+    <h3 class="titre text-center">Reviews</h3>
+      <ul class="list-unstyled d-flex" style="padding-bottom: 10px;">
+        <% @game.reviews.each do |review| %>
+          <li class="review-item" style="border-left: 2px solid black; padding: 20px 20px; margin-right: 10px; height: 200px; display: flex; flex-direction: column; justify-content: space-between; width: 200px; overflow-y: auto;">
+            <div>
+              <small><em class="text-muted"><%= review.created_at %> ago</em></small>
+            </div>
+            <h4 class="review-title" style="font-size: 1.5em; margin-bottom: 10px; flex-grow: 0;"> <%= review.title %> </h4>
+            <p class="mb-0" style="flex-grow: 1; overflow-y: auto; text-overflow: ellipsis; white-space: nowrap; display: block;"> <%= review.content %> </p>
+            <span class="review-rating" style="font-weight: bold; background-color: yellow; padding: 5px; border-radius: 5px;"> <%= review.rating %>/5 </span>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
   </div>
 </div>
