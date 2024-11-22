@@ -1,23 +1,20 @@
-    <h3><strong>Here are some games matching your search:</strong></h3>
-    <div id="searchresults">
-      <% if @search.any? %>
-        <% @search.each do |result| %>
-          <div class="d-inline-flex p-2 overflow-auto"style="width: 27%; height: auto">
-            <div class="results">
-              <div class="photo-card">
-                <% result.photos.each do |photo| %>
-                  <%= link_to game_path(result), class: "text-decoration-none", :action => 'go' do %>
-                    <%= cl_image_tag photo.key, height: 150, width: 150, crop: :fill, class: "img-fluid" %>
-                  <% end %>
+<div id="searchresults">
+  <h1 class="text-white text-center"><strong>Here are some games matching your search:</strong></h1>
+    <% if @search.any? %>
+      <% @search.each do |result| %>
+        <div class="d-inline-flex overflow-hidden p-2"style="">
+          <div class="results">
+              <% result.photos.each do |photo| %>
+                <%= link_to game_path(result), class: "text-decoration-none", :action => 'go' do %>
+                  <%= cl_image_tag photo.key, height: 150, width: 150, crop: :fill, class: "img-fluid" %>
+                <p><%= result.name%></p>
                 <% end %>
-              </div>
-              <div class="card-body">
-                <p class="card-title"><%= result.name%></p>
-              </div>
-            </div>
+              <% end %>
           </div>
-        <% end %>
-      <% else %>
-        <em>Sorry, no games found.</em>
+        </div>
       <% end %>
-    </div>
+    <% else %>
+      <div class="text-white"><em>Sorry, no games found... Try another search!</em>
+    <% end %>
+  </div>
+</div>
