@@ -1,44 +1,51 @@
-<div class="container">
-  <div class="text-white">
-    <h1><%= current_user.first_name %></h1>
-    <h2>Dashboard</h2>
-  </div>
-  <div>
-    <div class="text-white"><h3>All my games</h3></div>
-    <% @games.each do |game| %>
-      <div class="card-product">
-          <div class="card-product-img-div">
-            <% game.photos.each do |photo| %>
-              <%= cl_image_tag photo.key, height: 400, width: 400, crop: :fill%>
-            <% end %>
-          </div>
-        <div class="card-product-infos">
-          <h2><%= game.name %></h2>
-          <p><%= game.description %></p>
-          <div class="bookingtable">
-            <div class="bookingheader">
-              <div class="bookingheadercells"><h2>Player</h2></div>
-              <div class="bookingheadercells"><h2>Start date</h2></div>
-              <div class="bookingheadercells"><h2>End date</h2></div>
-              <div class="bookingheadercells"><h2>Status</h2></div>
+<% if user_signed_in? == false%>
+  <head>
+    <meta http-equiv="refresh" content="0; URL=/users/sign_in">
+  </head>
+<% else%>
+
+  <div class="container">
+    <div class="text-white">
+      <h1><%= current_user.first_name %></h1>
+      <h2>Dashboard</h2>
+    </div>
+    <div>
+      <div class="text-white"><h3>All my games</h3></div>
+      <% @games.each do |game| %>
+        <div class="card-product">
+            <div class="card-product-img-div">
+              <% game.photos.each do |photo| %>
+                <%= cl_image_tag photo.key, height: 400, width: 400, crop: :fill%>
+              <% end %>
             </div>
-            <% game.bookings.each do |booking| %>
-              <div class="bookinglines">
-                <div class="bookinglinescells"><p><%= booking.user.first_name %></p></div>
-                <div class="bookinglinescells"><p><%= booking.start_date %></p></div>
-                <div class="bookinglinescells"><p><%= booking.end_date %></p></div>
-                <% if booking.status == "denied" %>
-                  <div class="bookinglinescells" id="lastcell"><p class="statusdenied">refused</p></div>
-                <% elsif booking.status == "accepted" %>
-                  <div class="bookinglinescells" id="lastcell"><p class="statusaccepted">accepted</p></div>
-                <% else %>
-                  <div class="bookinglinescells" id="lastcell"><p><%= link_to 'accept', accept_booking_path(booking.id), data: {turbo_method: :patch }, class: "accept pending" %>  <%= link_to 'deny', deny_booking_path(booking.id), data: {turbo_method: :patch }, class: "deny pending" %></p></div>
-                <% end %>
+          <div class="card-product-infos">
+            <h2><%= game.name %></h2>
+            <p><%= game.description %></p>
+            <div class="bookingtable">
+              <div class="bookingheader">
+                <div class="bookingheadercells"><h2>Player</h2></div>
+                <div class="bookingheadercells"><h2>Start date</h2></div>
+                <div class="bookingheadercells"><h2>End date</h2></div>
+                <div class="bookingheadercells"><h2>Status</h2></div>
               </div>
-            <% end %>
+              <% game.bookings.each do |booking| %>
+                <div class="bookinglines">
+                  <div class="bookinglinescells"><p><%= booking.user.first_name %></p></div>
+                  <div class="bookinglinescells"><p><%= booking.start_date %></p></div>
+                  <div class="bookinglinescells"><p><%= booking.end_date %></p></div>
+                  <% if booking.status == "denied" %>
+                    <div class="bookinglinescells" id="lastcell"><p class="statusdenied">refused</p></div>
+                  <% elsif booking.status == "accepted" %>
+                    <div class="bookinglinescells" id="lastcell"><p class="statusaccepted">accepted</p></div>
+                  <% else %>
+                    <div class="bookinglinescells" id="lastcell"><p><%= link_to 'accept', accept_booking_path(booking.id), data: {turbo_method: :patch }, class: "accept pending" %>  <%= link_to 'deny', deny_booking_path(booking.id), data: {turbo_method: :patch }, class: "deny pending" %></p></div>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
+<%end%>
