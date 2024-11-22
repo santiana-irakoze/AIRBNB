@@ -69,6 +69,23 @@ class BookingsController < ApplicationController
     redirect_to games_path, status: :see_other ### vérifier le path
   end
 
+  def accept
+    @booking = Booking.find(params[:id])
+    @booking.status = "accepted"
+    if @booking.save
+      redirect_to dashboard_path
+    end
+  end
+
+  def deny
+    @booking = Booking.find(params[:id])
+    @booking.status = "denied"
+    if @booking.save
+      redirect_to dashboard_path
+    end
+
+  end
+
   private
 
   def booking_params

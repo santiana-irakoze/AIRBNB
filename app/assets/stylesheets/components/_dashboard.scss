@@ -1,6 +1,6 @@
 .card-product {
   overflow: hidden;
-  height: 180px;
+  height: fit-content;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -9,11 +9,15 @@
   width: 80vw;
 }
 
-.card-product img {
-  height: 174px;
-  width: 100%;
-  object-fit: cover;
+.card-product-img-div {
+  width: 150px;
   margin: 3px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 150px;
+  object-fit: cover;
 }
 
 .card-product h2 {
@@ -26,22 +30,30 @@
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
-  margin-bottom: 0;
 }
 
 .card-product .card-product-infos {
   padding: 16px;
 }
 
+.card-product-infos .bookingtable {
+  align-items: center;
+}
+
 .bookingtable {
-  width: 60vw;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  width: 50vw;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: transparent;
+  width: fit-content;
 }
 
 .bookingheader {
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
   margin-top: 15px;
+  margin-bottom: 2px;
   display: flex;
   overflow: hidden;
 }
@@ -51,7 +63,7 @@
   padding-inline: 10px;
   background-color: $red;
   min-width: 12vw;
-  flex-grow: 1;
+  flex-grow: auto;
   text-align: center;
   color: $white;
 }
@@ -59,23 +71,56 @@
 .bookinglines {
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
-  margin-top: 3px;
+  margin-bottom: 2px;
   display: flex;
 }
 .bookinglinescells {
   border-right: 0.5px dotted $redgame;
   border-bottom: 0.5px dotted $redgame;
-  padding-inline: 10px;
   background-color: transparent;
   min-width: 12vw;
-  flex-grow: 1;
+  flex-grow: auto;
   text-align: center;
+  align-items: center;
+  justify-items: center;
   color: $redgame;
   font-weight:500;
-  padding: 4px 0px 4px 0px;
+  padding: 4px 0px 6px 0px;
   border-radius: 2px;
+  overflow: hidden;
 }
 
 #lastcell {
   border-right: none;
+}
+
+.statusaccepted {
+  color: $success;
+}
+
+.statusdenied {
+  color: $warning;
+}
+
+.accept {
+  background-color: $success;
+}
+
+.deny {
+  background-color: $warning;
+}
+
+.pending {
+  box-shadow: 0 0 3px rgba(0,0,0,0.4);
+  transition: 0.1s;
+  text-decoration: none;
+  color: $redgame;
+  width: 50px;
+  display: inline-grid;
+  padding: 4px 0px 4px 0px;
+  border-radius: 20px;
+}
+
+.pending:hover {
+  transform : scale(1.2);
 }
