@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   end
 
   get 'dashboard', to: 'users#dashboard', as: :dashboard
+  patch 'accept/:id', to: 'bookings#accept', as: :accept_booking
+  patch 'deny/:id', to: 'bookings#deny', as: :deny_booking
 
   # Defines the root path route ("/")
   # root "posts#index"
