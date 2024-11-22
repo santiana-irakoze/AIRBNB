@@ -1,4 +1,4 @@
-<%= simple_form_for [@game, @review], html: { class: 'form' } do |f| %>
+<%= simple_form_for [@game, @review], html: { class: 'form', data: { controller: "rating" } } do |f| %>
   <div class="mb-3">
     <%= f.input :title, label: 'Review Title', input_html: { class: 'form-control' } %>
   </div>
@@ -6,15 +6,13 @@
     <%= f.input :content, as: :text, label: 'Content', input_html: { class: 'form-control' } %>
   </div>
   <div class="mb-3">
-    <%= f.input :rating, as: :hidden, input_html: { id: 'rating_input' } %>
+    <%= f.input :rating, as: :hidden, input_html: { id: 'rating_input', data: { rating_target: "hiddenInput" } } %>
     <label for="review_rating" class="form-label">Rating</label>
-    <div id="star" class="d-flex">
-      <div class="stars">
-        <i class="fa fa-star gold"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
+    <div class="d-flex">
+      <div id="star" class="stars">
+        <% 1.upto(5) do |i| %>
+          <i class="fa fa-star" data-value="<%= i %>" data-action="click->rating#select" data-rating-target="star"></i>
+        <% end %>
       </div>
     </div>
   </div>
