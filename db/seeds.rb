@@ -10,16 +10,19 @@
 
 require "open-uri"
 
+Review.destroy_all
 Booking.destroy_all
 Game.destroy_all
 User.destroy_all
-Review.destroy_all
-Booking.destroy_all
 
 user1 = User.create!(email: "santiana@santiana.fr", password: "santiana123", first_name:"Santiana" , last_name: "Santiano")
+puts "User #{user1.first_name} created"
 user2 = User.create!(email: "odile@odile.fr", password: "odile123", first_name: "Odile", last_name: "Odilon")
+puts "User #{user2.first_name} created"
 user3 = User.create!(email: "baudouin@baudouin.fr", password: "baudouin123", first_name: "Baudouin", last_name: "Baudon")
+puts "User #{user3.first_name} created"
 user4 = User.create!(email: "gloire@gloire.fr", password: "gloire123", first_name: "Gloire", last_name: "Victoire")
+puts "User #{user4.first_name} created"
 
 game1 = Game.create!(name: "Patchwork", description: "Un super jeu !", location: "Paris", price: 5, category: "Family", user: user1, min_number_of_players: 2, max_number_of_players: 2, playing_time: 30)
 file1 = URI.parse("https://cf.geekdo-images.com/wLW7pFn0--20lEizEz5p3A__original/img/B1j7R-slq8wxgC71Sg1F7S1s7Kg=/0x0/filters:format(jpeg)/pic2270442.jpg").open
@@ -82,27 +85,80 @@ game12.photos.attach(io: file12, filename: "#{game12.name}-photo.jpg", content_t
 game12.save!
 puts "Game #{game12.name} created"
 
-review1 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game1)
-review2 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game1)
-review3 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game2)
-review4 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game2)
-review5 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game3)
-review6 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game3)
-review7 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game4)
-review8 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game4)
-review9 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game5)
-review10 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game5)
-review11 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: gam6)
-review12 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game6)
-review13 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game7)
-review14 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game7)
-review15 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game8)
-review16 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game8)
-review17 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game9)
-review18 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game9)
-review19 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game10)
-review20 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game10)
-review21 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game11)
-review22 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game11)
-review23 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game12)
-review24 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game12)
+review1 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game: game1)
+puts "Review #{review1.title} created"
+review2 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game: game1)
+puts "Review #{review2.title} created"
+review3 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game: game2)
+puts "Review #{review3.title} created"
+review4 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game: game2)
+puts "Review #{review4.title} created"
+review5 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game: game3)
+puts "Review #{review5.title} created"
+review6 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game: game3)
+puts "Review #{review6.title} created"
+review7 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game: game4)
+puts "Review #{review7.title} created"
+review8 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game: game4)
+puts "Review #{review8.title} created"
+review9 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game: game5)
+puts "Review #{review9.title} created"
+review10 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game: game5)
+puts "Review #{review10.title} created"
+review11 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game: game6)
+puts "Review #{review11.title} created"
+review12 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game: game6)
+puts "Review #{review12.title} created"
+review13 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game: game7)
+puts "Review #{review13.title} created"
+review14 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game: game7)
+puts "Review #{review14.title} created"
+review15 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game: game8)
+puts "Review #{review15.title} created"
+review16 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game: game8)
+puts "Review #{review16.title} created"
+review17 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game: game9)
+puts "Review #{review17.title} created"
+review18 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game: game9)
+puts "Review #{review18.title} created"
+review19 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game: game10)
+puts "Review #{review19.title} created"
+review20 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game: game10)
+puts "Review #{review20.title} created"
+review21 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game: game11)
+puts "Review #{review21.title} created"
+review22 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game: game11)
+puts "Review #{review22.title} created"
+review23 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game: game12)
+puts "Review #{review23.title} created"
+review24 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game: game12)
+puts "Review #{review24.title} created"
+
+
+booking1 = Booking.create!(start_date: Date.new(2024, 11, 23), end_date: Date.new(2024, 11, 28), game: game1, user: user2, status: "pending")
+puts "Booking 1 created"
+booking2 = Booking.create!(start_date: Date.new(2024, 12, 1), end_date: Date.new(2024, 12, 12), game: game2, user: user3, status: "denied")
+puts "Booking 2 created"
+booking3 = Booking.create!(start_date: Date.new(2024, 12, 15), end_date: Date.new(2024, 12, 21), game: game3, user: user4, status: "accepted")
+puts "Booking 3 created"
+
+booking4 = Booking.create!(start_date: Date.new(2024, 11, 23), end_date: Date.new(2024, 11, 28), game: game4, user: user1, status: "pending")
+puts "Booking 4 created"
+booking5 = Booking.create!(start_date: Date.new(2024, 12, 1), end_date: Date.new(2024, 12, 1), game: game5, user: user3, status: "denied")
+puts "Booking 5 created"
+booking6 = Booking.create!(start_date: Date.new(2024, 12, 15), end_date: Date.new(2024, 12, 21), game: game6, user: user4, status: "accepted")
+puts "Booking 6 created"
+
+booking7 = Booking.create!(start_date: Date.new(2024, 11, 23), end_date: Date.new(2024, 11, 28), game: game7, user: user1, status: "pending")
+puts "Booking 8 created"
+booking8 = Booking.create!(start_date: Date.new(2024, 12, 1), end_date: Date.new(2024, 12, 1), game: game8, user: user2, status: "denied")
+puts "Booking 8 created"
+booking9 = Booking.create!(start_date: Date.new(2024, 12, 15), end_date: Date.new(2024, 12, 21), game: game9, user: user4, status: "accepted")
+puts "Booking 9 created"
+
+booking10 = Booking.create!(start_date: Date.new(2024, 11, 23), end_date: Date.new(2024, 11, 28), game: game10, user: user1, status: "pending")
+puts "Booking 10 created"
+booking11 = Booking.create!(start_date: Date.new(2024, 12, 1), end_date: Date.new(2024, 12, 1), game: game11, user: user2, status: "denied")
+puts "Booking 11 created"
+booking12 = Booking.create!(start_date: Date.new(2024, 12, 15), end_date: Date.new(2024, 12, 21), game: game12, user: user3, status: "accepted")
+puts "Booking 12 created"
