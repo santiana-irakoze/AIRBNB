@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!
+
   def new
     @review = Review.new
   end
@@ -13,6 +15,7 @@ class ReviewsController < ApplicationController
       render 'games/show', status: :unprocessable_entity
     end
   end
+
   private
 
   def review_params

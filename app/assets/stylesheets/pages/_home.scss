@@ -1,1 +1,38 @@
 // Specific CSS for your home-page
+.categories {
+  display: flexbox;
+  flex-direction: column;
+  padding: 100px 0px 0px 400px;
+}
+
+.categories_rows {
+  display: flex;
+  color: $light-gray;
+  text-shadow: 0px 0px 10px rgba(240, 240, 240, 0.5);
+  opacity: 0.9;
+}
+
+.categories_rows h2 {
+  margin-left: 10px;
+}
+
+.categories_item {
+  border: 0.5px solid rgba(240, 240, 240, 0.2);
+  box-shadow: 0px 0px 10px rgba(240, 240, 240, 0.5);
+  border-radius: 5px;
+  background-color: transparent;
+  color: $light-gray;
+  text-shadow: 0px 0px 10px rgba(240, 240, 240, 0.5);
+  opacity: 0.7;
+  width: 200px;
+  height: 80px;
+  justify-items: center;
+  align-content:center;
+  margin: 10px;
+  transition: 0.1 ease;
+}
+
+.categories_item:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
