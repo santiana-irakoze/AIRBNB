@@ -13,6 +13,8 @@ require "open-uri"
 Booking.destroy_all
 Game.destroy_all
 User.destroy_all
+Review.destroy_all
+Booking.destroy_all
 
 user1 = User.create!(email: "santiana@santiana.fr", password: "santiana123", first_name:"Santiana" , last_name: "Santiano")
 user2 = User.create!(email: "odile@odile.fr", password: "odile123", first_name: "Odile", last_name: "Odilon")
@@ -80,6 +82,27 @@ game12.photos.attach(io: file12, filename: "#{game12.name}-photo.jpg", content_t
 game12.save!
 puts "Game #{game12.name} created"
 
-
-
-
+review1 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game1)
+review2 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game1)
+review3 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game2)
+review4 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game2)
+review5 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game3)
+review6 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game3)
+review7 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game4)
+review8 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game4)
+review9 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game5)
+review10 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game5)
+review11 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: gam6)
+review12 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game6)
+review13 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game7)
+review14 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game7)
+review15 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game8)
+review16 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game8)
+review17 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game9)
+review18 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game9)
+review19 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game10)
+review20 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game10)
+review21 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game11)
+review22 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game11)
+review23 = Review.create!(rating: 4, title: "Bon jeu", content: "Nous avons passé un bon moment avec ce jeu.", game_id: game12)
+review24 = Review.create!(rating: 5, title: "Super jeu", content: "Ce jeu est fantastique !", game_id: game12)

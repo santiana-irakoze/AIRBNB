@@ -1,13 +1,12 @@
 <nav class="navbar navbar-expand-lg">
   <div class="container-fluid d-flex align-items-center">
 
-  <a class="navbar-brand position-fixed top-0">
-    <%= link_to cl_image_tag("meyshhjdvhde5mxnoc9y", width: 80, height: 80, crop: :fill), root_path %>
-  </a>
-
+    <a class="navbar-brand position-fixed top-0">
+      <%= link_to cl_image_tag("meyshhjdvhde5mxnoc9y", width: 80, height: 80, crop: :fill), root_path %>
+    </a>
 
     <div>
-      <%= form_with url: root_path, method: :get, class: "d-flex" do %>
+      <%= form_with url: games_path, method: :get, class: "d-flex" do %>
         <%= text_field_tag :query,
             params[:query],
             class: "form-control",
@@ -17,12 +16,9 @@
       <% end %>
     </div>
 
-
-
-
     <div>
       <%= link_to new_game_path, style: "text-decoration:none;", :action => 'go' do %>
-        <p id="add-game">Add a new game</p>
+        <button class="btn btn-warning">Add a new game</button>
       <% end %>
     </div>
 

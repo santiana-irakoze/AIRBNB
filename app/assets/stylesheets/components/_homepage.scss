@@ -40,14 +40,24 @@
   background: linear-gradient(90deg, rgba(15,14,43,1) 27%, rgba(107,9,28,1) 67%);
 }
 
-#add-game {
-  // box-shadow: 0 3px 5px rgb(47, 47, 47);
-  color: white;
-  background-color: rgb(229, 88, 18);
-  margin-left: 16px;
-  margin-right: 64px;
-}
-
 p {
   margin: 0px;
+}
+
+
+.presentation-card {
+  margin-top: 48px;
+  margin-left: 500px;
+  padding-left: 16px;
+  padding-top: 16px;
+  border-radius: 16px;
+  background-color: rgba($color: #ffffff, $alpha: 0.3);
+  height: 300px;
+  width: 500px;
+  text-align: center;
+
+  h3 {
+    color: white;
+  }
+
 }
