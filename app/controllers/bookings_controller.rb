@@ -11,8 +11,6 @@ class BookingsController < ApplicationController
     @booking.game = @game
     @booking.user = current_user
 
-
-
 # start_date ne doit pas être antérieure à aujourd'hui
 # end_date ne doit pas être antérieure à start_date
 # Date ne doit pas déjà être réservée
@@ -59,7 +57,7 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     if @booking.save(booking_params)
-      redirect_to ### A REFLECHIR
+      redirect_to game_booking_path(@game, @booking)
     else
       render :edit, status: :unprocessable_entity
     end
